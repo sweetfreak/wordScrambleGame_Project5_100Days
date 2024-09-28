@@ -38,8 +38,11 @@ struct ContentView: View {
                             Image(systemName: "\(word.count).circle")
                             Text(word)
                                 .foregroundStyle(usedWords.count > higherScore ? .blue  : .black)
-                                
                         }
+                        .accessibilityElement()
+                        //.accessibilityLabel("\(word), \(word.count) letters")
+                        .accessibilityLabel(word)
+                        accessibilityHint("\(word.count) letters")
                     }
                 }
             }
